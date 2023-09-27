@@ -162,26 +162,18 @@ namespace dnYara
             return yc.Compile();
         }
 
-        public void HandleError(
-            int errorLevel,
-            string fileName,
-            int lineNumber,
-            IntPtr rule,
-            string message,
-            IntPtr userData)
+        public void HandleError(int errorLevel, string fileName, int lineNumber, IntPtr rule, string message, IntPtr userData)
         {
-
-            var marshaledRule = rule == IntPtr.Zero
-                ? new System.Nullable<YR_RULE>()
-                : Marshal.PtrToStructure<YR_RULE>(rule);
-            var ruleName = marshaledRule.HasValue ? "No Rule" : Marshal.PtrToStringAnsi(marshaledRule.Value.identifier);
-            var msg = string.Format("rule {3}, Line {1}, file: {2}: {0}",
-                message,
-                lineNumber,
-                string.IsNullOrWhiteSpace(fileName) ? fileName : "[none]",
-                ruleName);
-
-            compilationErrors.Add(msg);
+            try
+            {
+                var marshaledRule = rule == IntPtr.Zero ? new System.Nullable<YR_RULE>() : Marshal.PtrToStructure<YR_RULE>(rule);
+                var ruleName = marshaledRule.HasValue ? "No Rule" : Marshal.PtrToStringAnsi(marshaledRule.Value.identifier);
+                var msg = string.Format("rule {3}, Line {1}, file: {2}: {0}", message, lineNumber, string.IsNullOrWhiteSpace(fileName) ? fileName : "[none]", ruleName);
+                compilationErrors.Add(msg);
+            }
+            catch (Exception ex)
+            {
+            }
         }
     }
 }
