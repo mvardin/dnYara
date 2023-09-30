@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28803.202
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{184AEF48-18D1-46D3-966D-B11A1FFC5368}"
 EndProject
@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dnYara.NativePack", "Librar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dnYara.Interop", "Libraries\dnYara.Interop\dnYara.Interop.csproj", "{6AD0A95F-CED7-43EE-BCCE-F6D3D5C0C1E5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dnYara", "dnYara\dnYara.csproj", "{1360CD2C-1E6C-4933-B15B-87C8C5EC2F76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ardin.dnYara", "dnYara\Ardin.dnYara.csproj", "{1360CD2C-1E6C-4933-B15B-87C8C5EC2F76}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dnYara.UnitTests", "UnitTests\dnYara.UnitTests\dnYara.UnitTests.csproj", "{0A4FC512-D16F-48A1-A29E-FD9107BB8390}"
 EndProject
